@@ -1,0 +1,213 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    tools:context="com.acktos.rutaplus.ServiceDetailActivity" >
+
+    <!-- PROGRESS -->
+
+    <LinearLayout
+        android:id="@+id/detail_service_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/detail_service_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/login_progress_signing_in"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+    <!-- CONTENT -->
+
+    <ScrollView
+        android:id="@+id/service_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/img_driver_photo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:paddingRight="6dp"
+                android:paddingTop="8dp"
+                android:src="@drawable/placeholder_driver" />
+
+            <TextView
+                android:id="@+id/lbl_driver_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@id/img_driver_photo"
+                android:text="Oscar fabian Calderon"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_service_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lbl_driver_name"
+                android:layout_toRightOf="@id/img_driver_photo"
+                android:text="@string/lbl_vip_driver"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/darker_gray" />
+            
+            <TextView
+                android:id="@+id/txt_car_plate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_service_type"
+                android:layout_toRightOf="@id/img_driver_photo"
+                android:textSize="15sp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:id="@+id/container_pickup_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_car_plate"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/ic_place" />
+
+                <TextView
+                    android:id="@+id/lbl_address_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cra 79 # 10D-95 parques de castillas 4"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                
+            </LinearLayout>
+            
+             <LinearLayout
+                
+                android:id="@+id/container_datetime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/container_pickup_address"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/ic_min" />
+
+                <TextView
+                    android:id="@+id/lbl_time_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sep 02, 2014 11:49 PM"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                
+            </LinearLayout>
+            
+             
+            <LinearLayout 
+                android:id="@+id/cont_title_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/container_datetime"
+                android:weightSum="8">
+                
+                
+                <View 
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/darker_gray"/>
+                
+                <TextView 
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    style="@android:style/TextAppearance.Small"
+                    android:text="@string/lbl_rate_service"/>
+                
+                 <View 
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/darker_gray"/>
+                
+                
+            </LinearLayout>
+             
+            <RatingBar
+                android:id="@+id/rating_service_launch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cont_title_rating"
+                android:numStars="5"
+                android:stepSize="1"
+                android:layout_centerHorizontal="true" />
+            
+			<Button
+                android:id="@+id/btn_call_driver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rating_service_launch"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_action_call"
+                android:text="@string/lbl_call_driver" />
+            
+			
+            <Button
+                android:id="@+id/btn_defer_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_call_driver"
+                android:drawableLeft="@drawable/ic_action_alarms"
+                android:text="@string/title_defer_service" />
+
+            <Button
+                android:id="@+id/btn_cancel_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_defer_service"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_action_cancel"
+                android:text="@string/lbl_cancel_service"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout><!-- From: file:/D:/AndroidStudioProjects/RutaPlus/rutaPlus/src/main/res/layout/fragment_service_detail.xml -->

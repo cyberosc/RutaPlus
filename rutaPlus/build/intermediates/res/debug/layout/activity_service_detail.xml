@@ -1,0 +1,9 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    tools:context="com.acktos.rutaplus.ServiceDetailActivity"/>
+
+<!-- From: file:/D:/AndroidStudioProjects/RutaPlus/rutaPlus/src/main/res/layout/activity_service_detail.xml -->

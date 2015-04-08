@@ -1,0 +1,232 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    tools:context="${packageName}.${activityClass}" >
+
+     <!-- progress -->
+
+    <LinearLayout
+        android:id="@+id/add_service_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/add_serive_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/login_progress_signing_in"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+    <!-- service form -->
+
+    <ScrollView
+        android:id="@+id/service_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/message_service"
+                style="@style/lbl_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <!-- ADDRESS -->
+
+            <TextView
+                android:id="@+id/lbl_address"
+                style="@style/lbl_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/message_service"
+                android:text="@string/lbl_address" />
+
+            <EditText
+                android:id="@+id/txt_address"
+                style="@style/txt_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl_address"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+            <!-- ADDRESS DESTINATION -->
+
+            <TextView
+                android:id="@+id/lbl_address_destination"
+                style="@style/lbl_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_address"
+                android:text="@string/lbl_address_destination" />
+
+            <ImageButton
+                android:id="@+id/btn_list_destination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/lbl_address_destination"
+                android:src="@drawable/ic_action_favorite_places" />
+
+            <EditText
+                android:id="@+id/txt_address_destination"
+                style="@style/txt_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl_address_destination"
+                android:layout_toLeftOf="@id/btn_list_destination"
+                android:ems="10"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+            <!-- PLACE -->
+
+
+            <!--
+            <TextView
+                android:id="@+id/lbl_place"
+                style="@style/lbl_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_address_destination"
+                android:text="@string/lbl_place" />
+
+            <EditText
+                android:id="@+id/txt_place"
+                style="@style/txt_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:layout_below="@id/lbl_place"/>
+            -->
+
+            <LinearLayout
+                android:id="@+id/date_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_address_destination"
+                android:baselineAligned="false"
+                android:weightSum="2" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <!-- DATE -->
+
+                    <TextView
+                        android:id="@+id/lbl_date"
+                        style="@style/lbl_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="@string/lbl_pickup_date" />
+
+                    <EditText
+                        android:id="@+id/txt_date"
+                        style="@style/txt_form"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:focusable="false"
+                        android:inputType="date"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <!-- TIME -->
+
+                    <TextView
+                        android:id="@+id/lbl_time"
+                        style="@style/lbl_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="@string/lbl_pickup_time" />
+
+                    <EditText
+                        android:id="@+id/txt_time"
+                        style="@style/txt_form"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:focusable="false"
+                        android:inputType="date"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lbl_car"
+                style="@style/lbl_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date_container"
+                android:text="@string/lbl_car" />
+
+            <ImageButton
+                android:id="@+id/btn_add_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/lbl_car"
+                android:src="@drawable/ic_action_new" />
+
+            <Spinner
+                android:id="@+id/spinner_cars"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl_car"
+                android:layout_toLeftOf="@id/btn_add_car" />
+
+            <!--
+                 <Button
+                android:id="@+id/btn_add_new_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:text="@string/action_profile_complete" 
+                android:layout_below="@id/spinner_cars"/>
+            -->
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
+<!-- From: file:/D:/AndroidStudioProjects/RutaPlus/rutaPlus/src/main/res/layout/activity_add_service_elected.xml -->

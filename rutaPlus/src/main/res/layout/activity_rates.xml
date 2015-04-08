@@ -1,0 +1,329 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    tools:context="${packageName}.${activityClass}" >
+
+    <ScrollView
+        android:id="@+id/service_vip_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/rates_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+			
+           <!-- ELECTED DRIVER RATES 
+            <TextView
+                
+                android:id="@+id/rate_title"
+                style="@style/lbl_title"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="8dip"
+                android:gravity="center"
+                android:text="@string/rates_vip_car" />
+			
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:weightSum="5" >
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_base_rate" />
+
+                <TextView
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:text="@string/rates_base" />
+
+                <TextView
+                    android:id="@+id/txt_base"
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:text="$0,000.00"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:weightSum="5" >
+
+                <ImageView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_min" />
+
+                <TextView
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/rates_min" />
+
+                <TextView
+                    android:id="@+id/txt_min"
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:text="$0,000.00"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:weightSum="5" >
+
+                <ImageView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_km" />
+
+                <TextView
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:text="@string/rates_km" />
+
+                <TextView
+                    android:id="@+id/txt_km"
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:text="$0,000.00"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:weightSum="5" >
+
+                <ImageView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_dis" />
+
+                <TextView
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:text="@string/rates_dis" />
+
+                <TextView
+                    android:id="@+id/txt_dis"
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:text="-20%"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:weightSum="5" >
+
+                <ImageView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_base_rate" />
+
+                <TextView
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:text="@string/rates_inc" />
+
+                <TextView
+                    android:id="@+id/txt_inc"
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:text="1x"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            
+            
+            <TextView
+                style="@style/lbl_title"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="8dip"
+                android:gravity="center"
+                android:text="@string/rates_elected_driver" />
+			
+             
+            	
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:weightSum="5" >
+
+                <ImageView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_bogota_in" />
+
+                <TextView
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:text="@string/rates_bogota_in" />
+
+                <TextView
+                   
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:gravity="right"
+                    android:text="@string/rate_bogota"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:weightSum="5" >
+
+                <ImageView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_bogota_out" />
+
+                <TextView
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:text="@string/rates_bogota_out" />
+
+                <TextView
+                   
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:text="@string/rate_bogota_out"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:weightSum="5" >
+
+                <ImageView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_km" />
+
+                <TextView
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:text="@string/rates_extra_km" />
+
+                <TextView
+                    
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:text="@string/rate_extra_km"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:weightSum="5" >
+
+                <ImageView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_extra_stop" />
+
+                <TextView
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:text="@string/rates_extra_stop" />
+
+                <TextView
+                    android:id="@+id/txt_dis"
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:text="@string/rate_extra_stop"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            -->
+            
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

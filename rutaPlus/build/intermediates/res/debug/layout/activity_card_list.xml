@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+
+
+    <Button
+        android:id="@+id/btn_refresh_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/refresh_payment_conection" 
+        android:visibility="gone"
+        android:onClick="refreshPaymentConnection"/>
+    
+    <TextView
+        android:id="@+id/lbl_empty_cards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="@android:color/darker_gray"
+        android:gravity="center_vertical"
+        android:text="@string/empty_payment_cards"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:visibility="gone"/>
+
+    <ListView
+        android:id="@+id/list_credit_cards"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+       	android:layout_alignParentLeft="true">
+
+    </ListView>
+
+    <Button
+
+        android:id="@+id/btn_no_add_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/msg_no_add_payment"
+        android:background="@android:color/darker_gray"
+        android:layout_alignParentBottom="true"
+        android:textAllCaps="true"
+        android:visibility="gone"
+        android:textSize="12sp"
+        android:onClick="logout"/>
+
+
+</RelativeLayout><!-- From: file:/D:/AndroidStudioProjects/RutaPlus/rutaPlus/src/main/res/layout/activity_card_list.xml -->

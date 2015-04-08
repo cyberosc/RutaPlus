@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.acktos.rutaplus"
+    android:versionCode="13"
+    android:versionName="1.4.3" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <permission
+        android:name="com.acktos.rutaplus.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.acktos.rutaplus.permission.C2D_MESSAGE" />
+
+    <!-- Maps API needs OpenGL ES 2.0. -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_rutaplus"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- DEBUG API KEY -->
+        <!--
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAZcXTpUQzf6IHJerX4CQzBP2nFEt2bzoE" />
+        -->
+
+
+        <!-- PRODUCTION API KEY -->
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyC-WgGf4iAxrQjPmYjCO67SwUeFrvXc1Vg" />
+
+        <activity
+            android:name="com.acktos.rutaplus.GoogleSignInActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.SplashScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_splash_screen"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.ProfileUserActivity"
+            android:label="@string/title_activity_profile_user"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.CreateNewAccountActivity"
+            android:label="@string/title_activity_create_new_account"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.ServiceActivity"
+            android:label="@string/title_activity_service" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.CarListActivity"
+            android:label="@string/title_activity_car_list" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.ServiceListActivity"
+            android:label="@string/title_activity_service_list" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.PlaceListActivity"
+            android:label="@string/title_activity_place_list" >
+        </activity>
+
+        <receiver
+            android:name="com.acktos.rutaplus.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.acktos.rutaplus" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.acktos.rutaplus.GCMIntentService" />
+
+        <activity
+            android:name="com.acktos.rutaplus.ServiceDetailActivity"
+            android:label="@string/title_activity_service_detail" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.SelectServiceTypeActivity"
+            android:label="@string/title_activity_select_service_type" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.AddServiceVIPActivity"
+            android:label="@string/title_activity_add_service_vip" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.ServiceVIPConfirmActivity"
+            android:label="@string/title_activity_service_vipconfirm" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.RatesActivity"
+            android:label="@string/title_activity_rates" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.ServiceConfirmActivity"
+            android:label="@string/title_activity_service_confirm" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.AddServiceElectedActivity"
+            android:label="@string/title_activity_add_service_elected" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.TermsActivity"
+            android:label="@string/title_activity_terms" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.CardListActivity"
+            android:label="@string/title_activity_card_list" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.AddCardActivity"
+            android:label="@string/title_activity_add_card" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.ChangePasswordActivity"
+            android:label="@string/title_activity_change_password" >
+        </activity>
+        <activity
+            android:name="com.acktos.rutaplus.RememberPasswordActivity"
+            android:label="@string/title_activity_remember_password"
+            android:parentActivityName="com.acktos.rutaplus.GoogleSignInActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.acktos.rutaplus.GoogleSignInActivity" />
+        </activity>
+    </application>
+
+</manifest>

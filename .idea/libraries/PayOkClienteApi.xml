@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="PayOkClienteApi">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/rutaPlus/libs/PayOkClienteApi.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
