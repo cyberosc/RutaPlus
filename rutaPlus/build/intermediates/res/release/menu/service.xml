@@ -1,15 +1,18 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.acktos.rutaplus.ServiceActivity" >
+
     <item 
         android:id="@+id/send_address" 
         android:title="@string/lbl_send_address"
         android:icon="@drawable/ic_action_send_now"
-        android:showAsAction="always" android:orderInCategory="2"></item>
+        android:showAsAction="always" android:orderInCategory="2"/>
     
-    <item 
+    <!--<item
         android:id="@+id/my_places_item" 
         android:title="@string/lbl_favorite_places"
         android:icon="@drawable/ic_action_favorite_places"
-        android:showAsAction="always" android:orderInCategory="1"></item>
+        android:showAsAction="always" android:orderInCategory="1"/>-->
     
 </menu>
-<!-- From: file:/D:/AndroidStudioProjects/RutaPlus/rutaPlus/src/main/res/menu/service.xml -->
+<!-- From: file:/Users/Acktos/AndroidStudioProjects/RutaPlus/rutaPlus/src/main/res/menu/service.xml -->

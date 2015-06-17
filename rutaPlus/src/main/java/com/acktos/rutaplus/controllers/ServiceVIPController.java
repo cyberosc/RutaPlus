@@ -22,13 +22,13 @@ public class ServiceVIPController {
 
 	private Context context;
 	private static final String TOKEN="ee8099de39d5167fe135baf92fa0df1c";
-	private static final String KEY_USER_ID="id";
-	private static final String KEY_ID="id";
-	private static final String KEY_SERVICE_TYPE="tipo";
-	private static final String KEY_ENCRYPT="encrypt";
-	private static final String RESPONSE_TAG="response";
-	private static final String MESSAGE_TAG="message";
-	private static final String FIELDS_TAG="fields";
+	public static final String KEY_USER_ID="id";
+	public static final String KEY_ID="id";
+	public static final String KEY_SERVICE_TYPE="tipo";
+	public static final String KEY_ENCRYPT="encrypt";
+	public static final String RESPONSE_TAG="response";
+	public static final String MESSAGE_TAG="message";
+	public static final String FIELDS_TAG="fields";
 	private static final String RESPONSE_SUCCESS_CODE="200";
 
 	
@@ -121,9 +121,10 @@ public class ServiceVIPController {
 		return rates;
 	}
 	
-	public boolean addService(ServiceVIP service){
+	public String addService(ServiceVIP service){
 
-		boolean success=false;
+		String response=null;
+
 		String cardReference;
 		String cardType;
 		String userEmail;
@@ -170,8 +171,7 @@ public class ServiceVIPController {
 		httpPost.setParam(ServiceVIP.KEY_PAYMENT_PSWRD, pswrd);
 		httpPost.setParam(ServiceVIP.KEY_CARD_REFERENCE, cardReference);
 		httpPost.setParam(ServiceVIP.KEY_CARD_TYPE, cardType);
-		
-		
+
 		String encrypt=Encrypt.md5("null"
 				+service.address
 				+service.coordinates
@@ -186,7 +186,7 @@ public class ServiceVIPController {
 				+cardType
 				+TOKEN);
 		
-		Log.i("debug add service params","null"+" "
+		/*Log.i("debug add service params","null"+" "
 				+service.address+" "
 				+service.coordinates+" "
 				+userId+" "
@@ -198,26 +198,29 @@ public class ServiceVIPController {
 				+pswrd+" "
 				+cardReference+" "
 				+cardType+" "
-				+TOKEN);
+				+TOKEN);*/
 		
 		httpPost.setParam(KEY_ENCRYPT, encrypt);
 
 		String responseData=httpPost.postRequest();
 		if(responseData!=null){
-			Log.i("response add service VIP",responseData);
+			Log.i("response addServiceVIP",responseData);
 			try {
 				JSONObject jsonObject=new JSONObject(responseData);
 				String responseCode=jsonObject.getString(RESPONSE_TAG);
 
 				if(responseCode.equals(RESPONSE_SUCCESS_CODE)){
-					success=true;
+					JSONObject responseFields=jsonObject.getJSONObject(FIELDS_TAG);
+					String ttl=responseFields.getString(ServiceVIP.KEY_TTL); // get TTL time to show circular progress
+					String serviceID=responseFields.getString(ServiceVIPController.KEY_ID); // get service id
+					response=ttl+"-"+serviceID;
 				}
 			} catch (JSONException e) {
 				e.getMessage();
 			}	
 		}
 
-		return success;
+		return response;
 
 	}
 	

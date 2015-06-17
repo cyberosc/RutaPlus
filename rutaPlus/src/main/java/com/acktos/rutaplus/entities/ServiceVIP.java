@@ -23,6 +23,7 @@ public class ServiceVIP {
 	public static final String KEY_PAYMENT_PSWRD="claveUsuario";
 	public static final String KEY_CARD_REFERENCE="medioPagoId";
 	public static final String KEY_CARD_TYPE="tipoMedioPagoId";
+	public static final String KEY_TTL="ttl";
 	
 	
 	

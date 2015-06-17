@@ -137,12 +137,12 @@ MapServiceFragment.OnChangeAddressListener,MyPlacesListener{
 			startActivity(i);
 			return true;
 
-		case R.id.my_places_item:
+		/*case R.id.my_places_item:
 
 			DialogFragment myPlacesDialog=new MyPlacesDialogFragment();
 			myPlacesDialog.show(getFragmentManager(),"myPlacesDialog");
 
-			return true;
+			return true;*/
 
 		case android.R.id.home:
 			i=new Intent(this,SelectServiceTypeActivity.class);

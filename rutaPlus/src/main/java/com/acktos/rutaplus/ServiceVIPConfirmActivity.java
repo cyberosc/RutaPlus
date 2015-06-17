@@ -70,7 +70,7 @@ public class ServiceVIPConfirmActivity extends Activity {
 		dateTime=extras.getString(AddServiceVIPActivity.TAG_DATE_TIME_VIP);
 		serviceType=extras.getInt(SelectServiceTypeActivity.TYPE_SERVICE);
 		
-		Log.i("debug toogle service attempt4",Boolean.toString(immediate));
+		Log.i("debug toogle service",Boolean.toString(immediate));
 		
 		txtAddress.setText(address);
 		
@@ -171,7 +171,7 @@ public class ServiceVIPConfirmActivity extends Activity {
 		}
 	}
 	
-	private class AddNewServiceTask extends AsyncTask<ServiceVIP,Void,Boolean>{
+	private class AddNewServiceTask extends AsyncTask<ServiceVIP,Void,String>{
 
 		private Context context;
 
@@ -180,25 +180,39 @@ public class ServiceVIPConfirmActivity extends Activity {
 		}
 			
 		@Override
-		protected void onPostExecute(Boolean result) {
-			super.onPostExecute(result);
-			
-			String message="";
-			if(result){
+		protected void onPostExecute(String response) {
+
+			super.onPostExecute(response);
+
+			String[] responses;
+			String ttl="";
+			String serviceId="";
+
+			try{
+
+				responses=response.split("-");
+				ttl=responses[0];
+				serviceId=responses[1];
+
+			}catch (ArrayIndexOutOfBoundsException e){
+				e.printStackTrace();
+			}
+
+
+			if(ttl!=null){
 				
-				message="El servicio fue enviado con éxito";
-				
-				Intent i=new Intent(ServiceVIPConfirmActivity.this,ServiceListActivity.class);
+				Intent i=new Intent(ServiceVIPConfirmActivity.this,WaitingDriverProgressActivity.class);
+				i.putExtra(ServiceVIP.KEY_TTL,ttl);
+				i.putExtra(ServiceVIPController.KEY_ID,serviceId);
 				i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(i);
 				finish();
 				
 			}else{
-				message="El servicio NO fue enviado con éxito";
+				Toast.makeText(context,getString(R.string.failed_add_service),Toast.LENGTH_LONG).show();
 			}
 			
 			setProgressBarIndeterminateVisibility(false);
-			Toast.makeText(context,message,Toast.LENGTH_LONG).show();
 			addServiceAttempt=true;
 		}
 
@@ -209,13 +223,14 @@ public class ServiceVIPConfirmActivity extends Activity {
 		}
 
 		@Override
-		protected Boolean doInBackground(ServiceVIP... service) {
+		protected String doInBackground(ServiceVIP... service) {
 			
-			boolean success=false;
+
 			addServiceAttempt=false;
 			ServiceVIPController serviceVipController=new ServiceVIPController(context);
-			success=serviceVipController.addService(service[0]);
-			return success;
+			String response=serviceVipController.addService(service[0]);
+
+			return response;
 		}
 	}
 

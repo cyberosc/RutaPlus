@@ -8,4 +8,4 @@
         android:icon="@drawable/ic_action_send_now"
         android:showAsAction="always" android:orderInCategory="1"></item>
 </menu>
-<!-- From: file:/D:/AndroidStudioProjects/RutaPlus/rutaPlus/src/main/res/menu/next.xml -->
+<!-- From: file:/Users/Acktos/AndroidStudioProjects/RutaPlus/rutaPlus/src/main/res/menu/next.xml -->

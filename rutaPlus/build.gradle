@@ -1,21 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        rutaplus {
-            keyAlias 'keyrutaplus'
-            keyPassword '61686fabianc'
-            storeFile file('D:/FAFA/Mis cuentas/ruta plus/keys Rutaplus/key-rutaplus')
-            storePassword '61686fabianc'
-        }
-    }
+
     compileOptions.encoding = 'ISO-8859-1'
-    compileSdkVersion 19
-    buildToolsVersion "21.1.1"
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
     defaultConfig {
         applicationId "com.acktos.rutaplus"
         minSdkVersion 16
-        targetSdkVersion 19
+        targetSdkVersion 22
     }
     buildTypes {
         release {
@@ -32,11 +25,12 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:19.1.0'
+    compile 'com.android.support:support-v4:22.1.1'
     compile 'joda-time:joda-time:2.3'
     compile 'com.google.android.gms:play-services:5+'
+    compile 'com.squareup.picasso:picasso:2.5.2'
     compile files('libs/apache-mime4j-0.6.jar')
     compile files('libs/httpmime-4.0.1.jar')
     compile files('libs/PayOkClienteApi.jar')
-    compile files('libs/picasso-2.4.0.jar')
+
 }

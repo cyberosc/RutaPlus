@@ -129,4 +129,4 @@
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp" />
 
-</android.support.v4.widget.DrawerLayout><!-- From: file:/D:/AndroidStudioProjects/RutaPlus/rutaPlus/src/main/res/layout-land/activity_select_service_type.xml -->
+</android.support.v4.widget.DrawerLayout><!-- From: file:/Users/Acktos/AndroidStudioProjects/RutaPlus/rutaPlus/src/main/res/layout-land/activity_select_service_type.xml -->

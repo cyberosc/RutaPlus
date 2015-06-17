@@ -20,6 +20,18 @@ public class GCMIntentService extends IntentService {
     NotificationCompat.Builder builder;
     
     private static final String DEBUG_TAG="debug GCMIntentService";
+    public static final String KEY_DRIVER_NAME="Nombre";
+    public static final String KEY_DRIVER_PLATE="Placa";
+    public static final String KEY_DRIVER_PHOTO="Imagen";
+    public static final String KEY_MESSAGE_TYPE="Type";
+    public static final String TYPE_ASSIGN_DRIVER="conductor_asignado";
+
+    public static final String BROADCAST_ASSIGN_DRIVER= "com.acktos.rutaplus";
+
+    private String messageType;
+    private String driverName;
+    private String driverPlate;
+    private String driverPhoto;
 
     public GCMIntentService() {
         super("291721187802");
@@ -41,19 +53,27 @@ public class GCMIntentService extends IntentService {
                 sendNotification("Deleted messages on server: " +extras.toString());
             // If it's a regular GCM message, do some work.
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
-                
-                /*for (int i=0; i<1; i++) {
-                    Log.i(DEBUG_TAG, "Working... " + (i+1)
-                            + "/5 @ " + SystemClock.elapsedRealtime());
-                    try {
-                        Thread.sleep(5000);
-                    } catch (InterruptedException e) {
+
+                messageType=extras.getString(KEY_MESSAGE_TYPE);
+                Log.i(DEBUG_TAG, "message type django:" + messageType);
+
+                if(messageType!=null){
+
+                    if(messageType.equals(TYPE_ASSIGN_DRIVER)){
+                        driverName=extras.getString(KEY_DRIVER_NAME);
+                        driverPlate=extras.getString(KEY_DRIVER_PLATE);
+                        driverPhoto=extras.getString(KEY_DRIVER_PHOTO);
+
+                        sendBroadcastDriverAssign(driverName, driverPlate, driverPhoto);
+                    }else{
+                        // Post notification of received message.
+                        sendNotification("" + extras.getString("Category"));
+                        Log.i(DEBUG_TAG, "Received: " + extras.toString());
                     }
-                }*/
-                //Log.i(DEBUG_TAG, "Completed work @ " + SystemClock.elapsedRealtime());
-                // Post notification of received message.
-                sendNotification(""+extras.getString("Category"));
-                Log.i(DEBUG_TAG, "Received: " + extras.toString());
+
+                }
+
+
             }
         }
         // Release the wake lock provided by the WakefulBroadcastReceiver.
@@ -78,5 +98,16 @@ public class GCMIntentService extends IntentService {
 
         mBuilder.setContentIntent(contentIntent);
         mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+    }
+
+    private void sendBroadcastDriverAssign(String driverName, String driverPlate,String driverPhoto){
+
+        Log.i(DEBUG_TAG,"Entry to sendBroadcastDriverAssign");
+        Intent intent = new Intent(BROADCAST_ASSIGN_DRIVER);
+        intent.putExtra(KEY_DRIVER_NAME, driverName);
+        intent.putExtra(KEY_DRIVER_PLATE, driverPlate);
+        intent.putExtra(KEY_DRIVER_PHOTO, driverPhoto);
+        sendBroadcast(intent);
+
     }
 }

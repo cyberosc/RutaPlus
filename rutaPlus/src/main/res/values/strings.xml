@@ -45,11 +45,11 @@
     <string name="failed_find_my_places">Tus lugares no se pudieron recuperar, intentalo luego.</string>
     <string name="failed_find_my_destination">Tus Destinos no se pudieron recuperar, intentalo luego.</string>
     <string name="empty_my_places">Aún no tienes lugares recientes.</string>
-    <string name="failed_add_service">Tu servicio no pudo ser registrado, intentalo luego.</string>
     <string name="success_add_service">Tu servicio fue enviado exitosamente.</string>
     <string name="failed_delete_car">Tu vehículo no pudo ser borrado, intentalo luego.</string>
     <string name="success_delete_car">Tu vehículo fue borrado.</string>
     <string name="dialog_message_defer">¿Cuanto tiempo deseas aplazar tu servicio?</string>
+    <string name="failed_add_service">Hubo un problema de conexión y tu servicio no pudo ser enviado. Intentalo luego.</string>
     <string name="failed_defer_service">Tu servicio no pudo ser aplazado.</string>
     <string name="success_defer_service">Tu servicio ha sido aplazado exitosamente.</string>
     <string name="timeout_defer_service">El tiempo limite para aplazar tu servicio ha culminado.</string>
@@ -170,6 +170,10 @@
     <string name="lbl_call_driver">LLamar conductor</string>
     <string name="lbl_vip_driver">Conductor VIP</string>
     <string name="plate">Placa</string>
+    <string name="driver_assign">Conductor Asignado</string>
+    <string name="try_again_later">Inténtalo má tarde</string>
+    <string name="not_drivers_available">No hay conductores disponibles</string>
+
 
     <!-- PLACEHOLDER -->
     <string name="prompt_email">ejemplo@gmail.com</string>
@@ -255,6 +259,7 @@
     <string name="empty_payment_cards">No tienes nigún medio de pago. Agrega uno para continuar</string>
     <string name="set_payment_success">Tu medio de pago ha sido seleccionado correctamente.</string>
     <string name="title_activity_remember_password">Recordar Contraseña</string>
+    <string name="title_activity_waiting_driver_progress">Localizando un vehículo&#8230;</string>
     
 
 </resources>

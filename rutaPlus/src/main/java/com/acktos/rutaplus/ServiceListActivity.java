@@ -23,6 +23,7 @@ public class ServiceListActivity extends Activity implements OnServiceSelectedLi
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.activity_service_list);
 
+		//add commit
 		actionBar=getActionBar();
 		actionBar.setDisplayUseLogoEnabled(false);
 		actionBar.setDisplayHomeAsUpEnabled(true);
