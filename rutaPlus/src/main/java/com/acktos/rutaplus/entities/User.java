@@ -4,17 +4,40 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * A simple DAO class for encapsulating an entity through the REST API.
+ * This class represents an user that performs a service request.
+ */
 public class User {
-	
+
+	/** User unique ID */
 	private String id=null;
+
+	/** User name */
 	private String name=null;
+
+	/** User email */
 	private String email=null;
+
+	/** User identification */
 	private String cc=null;
+
+	/** User account password */
 	private String pswrd=null;
+
+	/** User google id {@deprecated} */
 	private String gId=null;
+
+	/** User current state */
 	private String state=null;
+
+	/** User's number phone */
 	private String phone=null;
+
+	/** Google cloud Messaging id */
 	private String mobileId=null;
+
+	/** User enterprise*/
 	private String enterprise=null;
 	
 	public static final String KEY_USER="cliente";

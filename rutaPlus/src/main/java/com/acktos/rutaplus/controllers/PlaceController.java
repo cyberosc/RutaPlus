@@ -14,6 +14,10 @@ import com.acktos.rutaplus.entities.Place;
 import android.content.Context;
 import android.util.Log;
 
+
+/**
+ * @deprecated deprecated controller class for user's favorite places.
+ */
 public class PlaceController {
 	
 	private Context context;

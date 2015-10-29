@@ -15,6 +15,9 @@ import com.acktos.rutaplus.android.HttpRequest;
 import com.acktos.rutaplus.entities.Destination;
 import com.acktos.rutaplus.entities.User;
 
+/**
+ * @deprecated deprecated controller class for chosen driver
+ */
 public class DestinationController {
 
 	private Context context;
@@ -28,6 +31,7 @@ public class DestinationController {
 		this.context=context;
 		userController=new UserController(context);
 	}
+
 
 	public ArrayList<Destination> getAllDestination(){
 

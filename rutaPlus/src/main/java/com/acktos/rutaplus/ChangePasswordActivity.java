@@ -20,6 +20,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+/**
+ * This activity shows a form to change user password and perform the transaction asynchronously
+ */
 public class ChangePasswordActivity extends Activity {
 	
 	//App references
@@ -50,7 +54,7 @@ public class ChangePasswordActivity extends Activity {
 	}
 	
 	/**
-	 * invoked by change password button
+	 * Invoked by change password button
 	 */
 	public void changePassword(View view){
 		
@@ -60,7 +64,7 @@ public class ChangePasswordActivity extends Activity {
 		if(oldPassword.equals(newPassword) && !TextUtils.isEmpty(newPassword)){
 			(new ChangePasswordTask()).execute(oldPassword,newPassword);
 		}else{
-			Toast.makeText(this, "Las contraseñas no coinciden.", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, "Las contraseÃ±as no coinciden.", Toast.LENGTH_LONG).show();
 		}
 		
 	}
@@ -83,8 +87,7 @@ public class ChangePasswordActivity extends Activity {
 		protected String doInBackground(String... params) {
 			
 			String response=null;
-			response=userController.changePassword(txtChangePassword.getText().toString(), 
-					txtChangePasswordConfirm.getText().toString());
+			response=userController.changePassword(params[0], params[1]);
 			return response;
 			
 		}

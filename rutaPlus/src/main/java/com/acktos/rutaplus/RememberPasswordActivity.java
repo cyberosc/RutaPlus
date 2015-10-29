@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 import com.acktos.rutaplus.controllers.UserController;
 
+/**
+ * Activity that show a recovery password form and send this request to REST API.
+ */
 
 public class RememberPasswordActivity extends Activity {
 

@@ -112,11 +112,11 @@ ADDED from AndroidManifest.xml:42:9
 	android:value
 		ADDED from AndroidManifest.xml:44:13
 meta-data#com.google.android.maps.v2.API_KEY
-ADDED from AndroidManifest.xml:54:8
+ADDED from AndroidManifest.xml:48:8
 	android:name
-		ADDED from AndroidManifest.xml:55:12
+		ADDED from AndroidManifest.xml:49:12
 	android:value
-		ADDED from AndroidManifest.xml:56:12
+		ADDED from AndroidManifest.xml:50:12
 activity#com.acktos.rutaplus.GoogleSignInActivity
 ADDED from AndroidManifest.xml:59:9
 	android:label

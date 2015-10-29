@@ -16,7 +16,9 @@ import co.com.payok.lib.impl.PayOkClienteApi;
 
 import com.acktos.rutaplus.entities.CreditCard;
 
-
+/**
+ * Class to handle all connections and services with the payment gateway.
+ */
 public class PaymentController {
 
 	private Context context;
@@ -77,7 +79,7 @@ public class PaymentController {
 
 		String responseLogin=login();
 
-		Log.i("isRegistered() responseLogin:",responseLogin);
+		//Log.i("isRegistered() responseLogin:",responseLogin);
 
 		if(responseLogin.equals(CODE_USER_NOT_EXISTS)){
 			return RESULT_FALSE;
@@ -143,8 +145,8 @@ public class PaymentController {
 
 				respuesta = PayOkClienteApi.getInstance().iniciarSesion(usuarioDTO);
 
-				Log.i("response payment login: " ,"response code login:"+ respuesta.getCodigoRespuesta() );
-				Log.i("response payment login: " ,"response message login:"+ respuesta.getMensajeUsuario() );
+				//Log.i("response payment login: " ,"response code login:"+ respuesta.getCodigoRespuesta() );
+				//Log.i("response payment login: " ,"response message login:"+ respuesta.getMensajeUsuario() );
 
 				if(respuesta.getCodigoRespuesta().equals(CODE_SUCCESS)){
 					return RESULT_TRUE;
@@ -166,7 +168,7 @@ public class PaymentController {
 	
 	/**
 	 * store credit card the object in shared preferences through all activities
-	 * @param cardReference
+	 * @param card
 	 */
 	public void setPaymentCard(CreditCard card){
 

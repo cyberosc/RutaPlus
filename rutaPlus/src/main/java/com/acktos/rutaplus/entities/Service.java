@@ -5,23 +5,59 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
+/**
+ * A simple DAO class for encapsulating an entity through the REST API.
+ * This class represents the API response to a service request.
+ */
+
 public class Service {
-	
+
+    /** request unique ID response */
 	public String id;
+
+    /** Address of pickup*/
 	public String pickupAddress;
+
+    /**Latitude and longitude of the user's location*/
 	public String latlng;
+
+    /** Unique ID for user's favorite pickup place*/
 	public String placeId;
+
+    /** Unique ID for user's favorite destination place*/
 	public String destinationId;
+
+    /**Date on which the driver must pickup the user*/
 	public String dateTime;
+
+    /** Unique id for a vehicle that providing the service*/
 	public String carId;
+
+    /** String that represents current service status ex: APPROVED */
 	public String status;
+
+    /** Driver name who provide the service*/
 	public String driver;
+
+    /** Time that user decided defer service*/
 	public String dateTimeDefer;
+
+    /** Address of destination to which the user is directed*/
 	public String destinationAddress;
+
+    /**Type of vehicle that user requested*/
 	public String serviceType;
+
+    /**Card id from {@link CreditCard}*/
 	public String cardReference;
+
+    /** URI indicating driver's photo*/
 	public String driverPhoto;
+
+    /**plate of the vehicle that will provide the service*/
 	public String carPlate;
+
+    /** Driver's telephone number*/
     public String driverPhone;
 	
 	//Constant keys

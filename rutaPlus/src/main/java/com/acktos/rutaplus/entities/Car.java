@@ -4,7 +4,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * @deprecated deprecated DAO class for chosen driver
+ */
 public class Car {
+
 
 	public String id=null;
 	public String alias=null;

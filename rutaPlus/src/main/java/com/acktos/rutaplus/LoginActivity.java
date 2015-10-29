@@ -210,14 +210,14 @@ public class LoginActivity extends Activity {
 			Log.i(this.getClass().getSimpleName(),"response:"+response);
 
 			if (response.equals(UserController.LOGIN_SUCCESS)) {
-				//successMessage="Inicio de sesión éxitoso";
+				//successMessage="Inicio de sesiÃ³n Ã©xitoso";
 				//Intent i=new Intent(LoginActivity.this,SelectServiceTypeActivity.class);
 				Intent i=new Intent(LoginActivity.this,CardListActivity.class);
 				i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(i);
 				finish();
 			} else if(response.equals(UserController.LOGIN_FAILED)) {
-				successMessage="Tu usuario o contraseña son incorrectos.";
+				successMessage="Tu usuario o contraseÃ±a son incorrectos.";
 				txtPswrd.setError(getString(R.string.error_incorrect_password));
 				txtPswrd.requestFocus();
 				Toast.makeText(LoginActivity.this, successMessage, Toast.LENGTH_LONG).show();

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.acktos.rutaplus"
-    android:versionCode="14"
-    android:versionName="2.0" >
+    android:versionCode="15"
+    android:versionName="2.0.1" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -44,16 +44,17 @@
             android:value="@integer/google_play_services_version" />
 
         <!-- DEBUG API KEY -->
-        <!--
-       <meta-data
-           android:name="com.google.android.maps.v2.API_KEY"
-           android:value="AIzaSyAZcXTpUQzf6IHJerX4CQzBP2nFEt2bzoE" />
-        -->
-        <!-- PRODUCTION API KEY -->
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyC-WgGf4iAxrQjPmYjCO67SwUeFrvXc1Vg" />
+            android:value="AIzaSyAZcXTpUQzf6IHJerX4CQzBP2nFEt2bzoE" />
+
+        <!-- PRODUCTION API KEY -->
+        <!--
+      <meta-data
+          android:name="com.google.android.maps.v2.API_KEY"
+          android:value="AIzaSyC-WgGf4iAxrQjPmYjCO67SwUeFrvXc1Vg" />
+        -->
 
         <activity
             android:name="com.acktos.rutaplus.GoogleSignInActivity"
@@ -84,12 +85,6 @@
             android:name="com.acktos.rutaplus.LoginActivity"
             android:label="@string/title_activity_login"
             android:windowSoftInputMode="adjustResize|stateVisible" >
-        </activity>
-        <activity
-            android:name="com.acktos.rutaplus.FullscreenActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_fullscreen"
-            android:theme="@style/FullscreenTheme" >
         </activity>
         <activity
             android:name="com.acktos.rutaplus.ServiceActivity"

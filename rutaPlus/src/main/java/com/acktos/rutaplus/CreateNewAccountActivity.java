@@ -18,17 +18,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-
+/**
+ * Shows a form to register an user
+ * and perform a register transaction asynchronously through REST API.
+ */
 public class CreateNewAccountActivity extends Activity {
 
 	private UserController userController;
 	
-	
-	public static final String EXTRA_EMAIL = "com.example.android.authenticatordemo.extra.EMAIL";
 
-	/**
-	 * Keep track of the login task to ensure we can cancel it if requested.
-	 */
+
 	private RegisterUserTask mAuthTask = null;
 
 	// Values for EditText.
@@ -101,9 +100,9 @@ public class CreateNewAccountActivity extends Activity {
 	}
 	
 	/**
-	 * Attempts to sign in or register the account specified by the login form.
+	 * Attempts to register the account specified by the form.
 	 * If there are form errors (invalid email, missing fields, etc.), the
-	 * errors are presented and no actual login attempt is made.
+	 * errors are presented and no actual register attempt is made.
 	 */
 	public void attemptLogin() {
 		
@@ -166,7 +165,7 @@ public class CreateNewAccountActivity extends Activity {
 		}
 
 		if (cancel) {
-			// There was an error; don't attempt login and focus the first
+			// There was an error; don't attempt register and focus the first
 			// form field with an error.
 			focusView.requestFocus();
 		} else {
@@ -220,7 +219,7 @@ public class CreateNewAccountActivity extends Activity {
 	}
 
 	/**
-	 * Represents an asynchronous login/registration task used to authenticate
+	 * Represents an asynchronous registration task used to register
 	 * the user.
 	 */
 	public class RegisterUserTask extends AsyncTask<String, Void, Boolean> {
@@ -246,7 +245,7 @@ public class CreateNewAccountActivity extends Activity {
 			mAuthTask = null;
 
 			if (success) {
-				//Toast.makeText(CreateNewAccountActivity.this, "El registro se agrego con exito", Toast.LENGTH_LONG).show();
+
 				Intent i=new Intent(CreateNewAccountActivity.this,CardListActivity.class);
 				i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(i);

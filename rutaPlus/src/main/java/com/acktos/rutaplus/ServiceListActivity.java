@@ -12,7 +12,9 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
 
-
+/**
+ * Container for {@link ServiceListFragment}
+ */
 public class ServiceListActivity extends Activity implements OnServiceSelectedListener{
 
 	private ActionBar actionBar;

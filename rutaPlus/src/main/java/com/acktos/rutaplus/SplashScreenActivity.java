@@ -17,38 +17,15 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- * 
- * @see SystemUiHider
+ * Activity that acts as a splash screen which verifies that the user is
+ * logged in and redirects to the correct screen
  */
 public class SplashScreenActivity extends Activity {
-	/**
-	 * Whether or not the system UI should be auto-hidden after
-	 * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
-	 */
+
 	private static final boolean AUTO_HIDE = true;
-
-	/**
-	 * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
-	 * user interaction before hiding the system UI.
-	 */
 	private static final int AUTO_HIDE_DELAY_MILLIS = 1000;
-
-	/**
-	 * If set, will toggle the system UI visibility upon interaction. Otherwise,
-	 * will show the system UI visibility upon interaction.
-	 */
 	private static final boolean TOGGLE_ON_CLICK = true;
-
-	/**
-	 * The flags to pass to {@link SystemUiHider#getInstance}.
-	 */
 	private static final int HIDER_FLAGS = SystemUiHider.FLAG_HIDE_NAVIGATION;
-
-	/**
-	 * The instance of the {@link SystemUiHider} for this activity.
-	 */
 	private SystemUiHider mSystemUiHider;
 	
 	private Intent mIntent=null;
@@ -66,7 +43,7 @@ public class SplashScreenActivity extends Activity {
 		if(storage.isFileExists(UserController.FILE_NAME_PROFILE)){
 			
 			try {
-				Log.i("debug profile file",storage.readFile(UserController.FILE_NAME_PROFILE));
+
 				if(userController.isProfileCompleted()){
 					
 					if(userController.isEnterprise()){
@@ -80,7 +57,7 @@ public class SplashScreenActivity extends Activity {
 				}
 				//startActivity(gIntent);
 			} catch (JSONException e) {
-				Log.i("info","no se encuentra el archivo");
+				Log.i("info","profile file not found");
 				e.printStackTrace();
 			}
 		}else{
@@ -105,7 +82,7 @@ public class SplashScreenActivity extends Activity {
 
 		// Set up an instance of SystemUiHider to control the system UI for
 		// this activity.
-		mSystemUiHider = SystemUiHider.getInstance(this, contentView,HIDER_FLAGS);
+		mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
 		mSystemUiHider.setup();
 		mSystemUiHider
 				.setOnVisibilityChangeListener(new SystemUiHider.OnVisibilityChangeListener() {
@@ -163,9 +140,7 @@ public class SplashScreenActivity extends Activity {
 		// operations to prevent the jarring behavior of controls going away
 		// while interacting with the UI.
 		//findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
-		
-		
-		//check if the profile file exists
+
 		
 	}
 

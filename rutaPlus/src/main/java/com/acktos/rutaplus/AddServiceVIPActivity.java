@@ -251,7 +251,7 @@ public class AddServiceVIPActivity extends Activity {
 
 		} else if(!tgleInmediate.isChecked() &&  (TextUtils.isEmpty(dateValue) || TextUtils.isEmpty(timeValue))){
 
-			Log.i("debug validate","entre a segunda validación:"+Boolean.toString(tgleInmediate.isChecked()));
+			//Log.i("debug validate","entre a segunda validaciÃ³n:"+Boolean.toString(tgleInmediate.isChecked()));
 			Toast.makeText(this, getString(R.string.msg_empty_datetime), Toast.LENGTH_LONG).show();
 			validate = false;
 

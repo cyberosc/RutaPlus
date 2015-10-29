@@ -1,14 +1,28 @@
 package com.acktos.rutaplus.entities;
 
+
+/**
+ * A simple DAO class for encapsulating an entity and send service VIP data through the REST API.
+ * Representing a user's request for a VIP service.
+ */
 public class ServiceVIP {
-	
+
+    /**Address of the user's location*/
 	public String address;
+
+    /**Latitude and longitude of the user's location*/
 	public String coordinates;
-	public String cliente;
+
+    /**Date on which the driver must pickup the user*/
 	public String dateTime;
-	public String placeId;
+
+    /**Card id from {@link CreditCard}*/
 	public String cardReference;
+
+    /**Card type from {@link CreditCard}*/
 	public String cardType;
+
+    /**Type of vehicle requested*/
 	public String serviceType;
 	
 	public static final String KEY_NAME="nombre";

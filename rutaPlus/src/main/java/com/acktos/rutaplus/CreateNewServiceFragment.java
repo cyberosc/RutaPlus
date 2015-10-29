@@ -59,6 +59,11 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnShowListener;
 import android.content.Intent;
 
+/**
+ * Subclass of fragment to show the new service form
+ * and perform a new service request asynchronously through REST API.
+ */
+
 public class CreateNewServiceFragment extends Fragment implements OnClickListener{
 
 	private View rootView;

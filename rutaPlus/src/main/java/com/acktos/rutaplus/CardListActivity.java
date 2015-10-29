@@ -31,8 +31,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Activity that shows a list of credit cards
+ * through the connection to the payment gateway.
+ */
 public class CardListActivity extends Activity {
-
 
 
 	//UI references
@@ -181,7 +184,7 @@ public class CardListActivity extends Activity {
 	 */
 	public void refreshPaymentConnection(View view){
 
-		Log.i(this.getClass().getSimpleName()+"RefreshPaymentConnection","entre");
+		//Log.i(this.getClass().getSimpleName()+"RefreshPaymentConnection","entre");
 		paymentIsRegistered();
 	}
 

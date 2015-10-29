@@ -18,6 +18,11 @@ import com.acktos.rutaplus.entities.Rate;
 import com.acktos.rutaplus.entities.Service;
 import com.acktos.rutaplus.entities.ServiceVIP;
 
+
+/**
+ * Class for all network connections related to the {@link ServiceVIP} entity
+ * and performing data processing before delivery to presentation.
+ */
 public class ServiceVIPController {
 
 	private Context context;
@@ -35,12 +40,22 @@ public class ServiceVIPController {
 	
 	private UserController userController;
 
+
+	/**
+	 * Public ServiceVIP constructor through context reference.
+	 * @param context
+	 */
 	public ServiceVIPController(Context context){
 
 		this.context=context;
 		userController=new UserController(context);
 	}
 
+    /**
+     * Get current rates through get_rates service.
+     * @param serviceType
+     * @return {@ArrayList<String>} rates
+     */
 	public ArrayList<String> getRates(int serviceType){
 		
 
@@ -56,7 +71,7 @@ public class ServiceVIPController {
 
 		String responseData=httpPost.postRequest();
 		if(responseData!=null){
-			Log.i("response cancel service",responseData);
+			//Log.i("response cancel service",responseData);
 			try {
 				JSONObject jsonObject=new JSONObject(responseData);
 				String responseCode=jsonObject.getString(RESPONSE_TAG);
@@ -79,7 +94,11 @@ public class ServiceVIPController {
 		return rates;
 
 	}
-	
+
+    /**
+     * Get rates of all services types through REST API service.
+     * @return {@code ArrayList<Rate>} rates
+     */
 	public ArrayList<Rate> getAllRates(){
 		
 		ArrayList<Rate> rates=null;
@@ -95,7 +114,7 @@ public class ServiceVIPController {
 		
 		//String responseData="[{\"nombre\":\"VIP CAR\",\"tarifa\":\"5000\",\"minuto\":\"900\",\"km\":\"800\",\"descuento\":\"5000\",\"incremento\":\"1x\"},{\"nombre\":\"VIP VAN\",\"tarifa\":\"4000\",\"minuto\":\"901\",\"km\":\"801\",\"descuento\":\"5001\",\"incremento\":\"2x\"},{\"nombre\":\"VIP U\",\"tarifa\":\"3000\",\"minuto\":\"902\",\"km\":\"802\",\"descuento\":\"5002\",\"incremento\":\"3x\"}]";
 		if(responseData!=null){
-			Log.i("response getAllRates()",responseData);
+			//Log.i("response getAllRates()",responseData);
 			try {
 				
 				JSONObject jsonObject=new JSONObject(responseData);
@@ -120,7 +139,12 @@ public class ServiceVIPController {
 
 		return rates;
 	}
-	
+
+    /**
+     * Add user's service request to REST API.
+     * @param service
+     * @return estimate time.
+     */
 	public String addService(ServiceVIP service){
 
 		String response=null;
@@ -204,7 +228,7 @@ public class ServiceVIPController {
 
 		String responseData=httpPost.postRequest();
 		if(responseData!=null){
-			Log.i("response addServiceVIP",responseData);
+			//Log.i("response addServiceVIP",responseData);
 			try {
 				JSONObject jsonObject=new JSONObject(responseData);
 				String responseCode=jsonObject.getString(RESPONSE_TAG);
@@ -223,7 +247,12 @@ public class ServiceVIPController {
 		return response;
 
 	}
-	
+
+    /**
+     * Make a user request to cancel service through REST API.
+     * @param serviceId
+     * @return response string message
+     */
 	public String cancelService(String serviceId){
 
 		String message="";
@@ -236,7 +265,7 @@ public class ServiceVIPController {
 
 		String responseData=httpPost.postRequest();
 		if(responseData!=null){
-			Log.i("response cancel service",responseData);
+			//Log.i("response cancel service",responseData);
 			try {
 				JSONObject jsonObject=new JSONObject(responseData);
 				String responseCode=jsonObject.getString(RESPONSE_TAG);

@@ -9,6 +9,9 @@ import com.acktos.rutaplus.controllers.ServiceVIPController;
 import com.acktos.rutaplus.entities.ServiceVIP;
 
 
+/**
+ * Class to make a cancel service request in background through REST API.
+ */
 public class CancelServiceIntentService extends IntentService {
 
     private String serviceId;

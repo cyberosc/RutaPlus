@@ -3,13 +3,28 @@ package com.acktos.rutaplus.entities;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * A simple DAO class for encapsulating an entity through the REST API.
+ * This class represents the items that compose a fee for a service.
+ */
 public class Rate {
-	
+
+	/** Name for a rate ex: VIP CAR*/
 	public String name;
+
+	/** Minimum price of a service*/
 	public String baseRate;
+
+	/** Price por minute*/
 	public String minRate;
+
+	/** Price per kilometer*/
 	public String kmRate;
+
+	/** Discount percentage*/
 	public String discount;
+
+	/** Price increases at peak hours, expressed as an integer that indicates the number of times increases */
 	public String increase;
 	
 	

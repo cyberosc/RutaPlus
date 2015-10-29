@@ -52,6 +52,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.RatingBar.OnRatingBarChangeListener;
 
+/**
+ * Activity which display information about a service, and allows defer and cancel service.
+ */
 public class ServiceDetailActivity extends Activity{
 
 	public static final String TAG_JSON_DETAIL="json_detail";
@@ -571,6 +574,9 @@ public class ServiceDetailActivity extends Activity{
 
 		}
 
+        /**
+         * Async task to defer a service.
+         */
 		private static class DeferServiceTask extends AsyncTask<String,Void,Boolean>{
 
 
@@ -614,6 +620,9 @@ public class ServiceDetailActivity extends Activity{
 
 		}
 
+        /**
+         * Async task to cancel a service.
+         */
 		private static class CancelServiceTask extends AsyncTask<String,Void,String>{
 
 			private Activity activity;
@@ -652,6 +661,9 @@ public class ServiceDetailActivity extends Activity{
 			}
 		}
 
+        /**
+         * Async task to rate a service.
+         */
 		private static class RatingServiceTask extends AsyncTask<String,Void,Boolean>{
 
 			private ProgressBar progress;

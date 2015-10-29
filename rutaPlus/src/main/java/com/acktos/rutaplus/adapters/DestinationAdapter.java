@@ -17,6 +17,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+
+/**
+ * @deprecated A simple BaseAdapter subclass to handle {@link Destination} items into {@link android.widget.ListView}
+ */
 public class DestinationAdapter extends BaseAdapter {
 	
 	

@@ -1,25 +1,23 @@
 package com.acktos.rutaplus.adapters;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Locale;
-
-import com.acktos.rutaplus.R;
-import com.acktos.rutaplus.android.DateTimeUtils;
-import com.acktos.rutaplus.controllers.ServiceController;
-import com.acktos.rutaplus.entities.Service;
-
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.acktos.rutaplus.R;
+import com.acktos.rutaplus.android.DateTimeUtils;
+import com.acktos.rutaplus.controllers.ServiceController;
+import com.acktos.rutaplus.entities.Service;
+
+import java.util.ArrayList;
+
+/**
+ * A simple BaseAdapter subclass to handle {@link Service} items into {@link android.widget.ListView}
+ */
 public class ServiceAdapter extends BaseAdapter {
 	
 	

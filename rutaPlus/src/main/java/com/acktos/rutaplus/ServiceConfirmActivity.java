@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.acktos.rutaplus.controllers.ServiceController;
 import com.acktos.rutaplus.entities.Service;
 
+@Deprecated
 public class ServiceConfirmActivity extends Activity {
 
 

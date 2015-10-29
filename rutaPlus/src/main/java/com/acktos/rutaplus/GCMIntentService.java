@@ -1,18 +1,21 @@
 package com.acktos.rutaplus;
 
-import com.acktos.rutaplus.R;
-import com.google.android.gms.gcm.GoogleCloudMessaging;
-
 import android.app.IntentService;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+
+/**
+ * Subclass of {@link IntentService} launched by {@link GCMBroadcastReceiver }
+ * to manage two events; first: new notification for service state updates,
+ * second: new driver assigned to a service while the user waiting for a driver.
+ */
 public class GCMIntentService extends IntentService {
 	
 	public static final int NOTIFICATION_ID = 1;
@@ -39,7 +42,7 @@ public class GCMIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-    	Log.w(DEBUG_TAG,"entre a onhandle intent");
+
         Bundle extras = intent.getExtras();
         GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(this);
         
@@ -48,10 +51,10 @@ public class GCMIntentService extends IntentService {
         if (!extras.isEmpty()) {
             
             if (GoogleCloudMessaging.MESSAGE_TYPE_SEND_ERROR.equals(messageType)) {
-                sendNotification("Send error: " + extras.toString());
+                //sendNotification("Send error: " + extras.toString());
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_DELETED.equals(messageType)) {
-                sendNotification("Deleted messages on server: " +extras.toString());
-            // If it's a regular GCM message, do some work.
+                //sendNotification("Deleted messages on server: " +extras.toString());
+                // If it's a regular GCM message, do some work.
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
 
                 messageType=extras.getString(KEY_MESSAGE_TYPE);
@@ -80,11 +83,10 @@ public class GCMIntentService extends IntentService {
         GCMBroadcastReceiver.completeWakefulIntent(intent);
     }
 
-    // Put the message into a notification and post it.
-    // This is just one simple example of what you might choose to do with
-    // a GCM message.
+    /** Put the message into a new Android notification and post it.*/
+
     private void sendNotification(String msg) {
-    	Log.w(DEBUG_TAG,"entre a enviar notificacion");
+
         mNotificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
 
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0,new Intent(this, ServiceListActivity.class), 0);
@@ -102,7 +104,7 @@ public class GCMIntentService extends IntentService {
 
     private void sendBroadcastDriverAssign(String driverName, String driverPlate,String driverPhoto){
 
-        Log.i(DEBUG_TAG,"Entry to sendBroadcastDriverAssign");
+
         Intent intent = new Intent(BROADCAST_ASSIGN_DRIVER);
         intent.putExtra(KEY_DRIVER_NAME, driverName);
         intent.putExtra(KEY_DRIVER_PLATE, driverPlate);

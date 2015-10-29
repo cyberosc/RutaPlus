@@ -22,7 +22,9 @@ import com.acktos.rutaplus.services.CancelServiceIntentService;
 import com.acktos.rutaplus.util.HoloCircularProgressBar;
 import com.squareup.picasso.Picasso;
 
-
+/**
+ * This Activity shows a animation while a user waiting for your service request.
+ */
 public class WaitingDriverProgressActivity extends Activity {
 
     private static final String TAG = "WaitingDriverProgress";
@@ -247,7 +249,7 @@ public class WaitingDriverProgressActivity extends Activity {
         @Override
         public void onReceive(Context context, Intent intent) {
 
-            Log.i(TAG,"entry to onReceive Assign driver");
+            //Log.i(TAG,"entry to onReceive Assign driver");
             Bundle bundle = intent.getExtras();
             if (bundle != null) {
 
@@ -311,6 +313,6 @@ public class WaitingDriverProgressActivity extends Activity {
         outState.putString(STATE_DRIVER_NAME, driverName);
         outState.putString(STATE_DRIVER_PLATE,driverPlate);
         outState.putString(STATE_DRIVER_PHOTO,driverPhoto);
-        Log.i(TAG,"Entry to on saveInstanceState");
+        //Log.i(TAG,"Entry to on saveInstanceState");
     }
 }

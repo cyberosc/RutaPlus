@@ -1,37 +1,29 @@
 package com.acktos.rutaplus;
 
 
-import java.util.ArrayList;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.acktos.rutaplus.adapters.DrawableAdapter;
-import com.acktos.rutaplus.android.Encrypt;
-import com.acktos.rutaplus.controllers.PaymentController;
-import com.acktos.rutaplus.controllers.UserController;
-import com.acktos.rutaplus.netcom.CifradoConstantes;
-import com.acktos.rutaplus.netcom.Payment;
-
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.acktos.rutaplus.adapters.DrawableAdapter;
+import com.acktos.rutaplus.controllers.PaymentController;
+import com.acktos.rutaplus.controllers.UserController;
+
+import java.util.ArrayList;
+
+/**
+ * Activity which display the three types of service and manages the side-menu options.
+ */
 public class SelectServiceTypeActivity extends Activity {
 
 	private DrawerLayout mDrawerLayout;
@@ -282,10 +274,6 @@ public class SelectServiceTypeActivity extends Activity {
 		getActionBar().setTitle(mTitle);
 	}
 
-	/**
-	 * When using the ActionBarDrawerToggle, you must call it during
-	 * onPostCreate() and onConfigurationChanged()...
-	 */
 
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {

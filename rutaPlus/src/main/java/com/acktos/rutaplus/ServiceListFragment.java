@@ -21,6 +21,10 @@ import com.acktos.rutaplus.adapters.ServiceAdapter;
 import com.acktos.rutaplus.controllers.ServiceController;
 import com.acktos.rutaplus.entities.Service;
 
+
+/**
+ * Simple list fragment to show user's services through REST API.
+ */
 public class ServiceListFragment extends Fragment {
 
 	private ServiceController serviceController;

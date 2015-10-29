@@ -26,6 +26,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+@Deprecated
 public class CarListActivity extends Activity implements NewCarDialogFragment.OnDataChangeListener{
 
 	private ActionBar actionBar;

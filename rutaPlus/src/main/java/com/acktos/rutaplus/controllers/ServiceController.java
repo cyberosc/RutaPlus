@@ -23,6 +23,11 @@ import com.acktos.rutaplus.android.Encrypt;
 import com.acktos.rutaplus.android.HttpRequest;
 import com.acktos.rutaplus.entities.Service;
 
+/**
+ * Class for all network connections related to the {@link Service} entity
+ * and performing data processing before delivery to presentation.
+ */
+
 public class ServiceController {
 
 	private Context context;
@@ -58,11 +63,20 @@ public class ServiceController {
 	public static final String STATUS_KEY_IN_PLACE="Llego el conductor";
 
 
+    /**
+     * Public ServiceController constructor through context reference.
+     * @param context
+     */
 	public ServiceController(Context context){
 		this.context=context;
 		userController=new UserController(this.context);
 	}
 
+    /**
+     * Add a user's service request through REST API.
+     * @param service
+     * @return
+     */
 	public boolean addService(Service service){
 
 		boolean success=false;
@@ -146,7 +160,7 @@ public class ServiceController {
 
 		String responseData=httpPost.postRequest();
 		if(responseData!=null){
-			Log.i("response data service",responseData);
+			//Log.i("response data service",responseData);
 			try {
 				JSONObject jsonObject=new JSONObject(responseData);
 				String responseCode=jsonObject.getString(RESPONSE_TAG);
@@ -161,6 +175,11 @@ public class ServiceController {
 		return success;
 	}
 
+
+    /**
+     * Get a list of all user's services through REST API.
+     * @return  {@code ArrayList<Services>} services
+     */
 	public ArrayList<Service> getAllServices(){
 
 		ArrayList<Service> services=new ArrayList<Service>();
@@ -173,7 +192,7 @@ public class ServiceController {
 		httpRequest.setParam(KEY_ENCRYPT, encrypt);
 		String responseData=httpRequest.postRequest();
 		if(responseData!=null){
-			Log.i(this.toString()+"getAllervices()",responseData);
+			//Log.i(this.toString()+"getAllervices()",responseData);
 			try {
 				JSONObject jsonObject=new JSONObject(responseData);
 				String responseCode=jsonObject.getString(RESPONSE_TAG);
@@ -195,9 +214,11 @@ public class ServiceController {
 		return services;
 	}
 
-	/**
-	 * add a service object to ArrayList
-	 */
+    /**
+     * Get service object from json reference.
+     * @param jsonObject
+     * @return {@link Service}
+     */
 	private Service addItemService(JSONObject jsonObject){
 
 
@@ -211,6 +232,14 @@ public class ServiceController {
 		return service;
 	}
 
+
+    /**
+     * Make a request to defer user's service through REST API.
+     * @param serviceId
+     * @param oldDate
+     * @param minutes
+     * @return true if the request was successful, otherwise false.
+     */
 	public boolean deferService(String serviceId,String oldDate,int minutes){
 
 		boolean success=false;
@@ -238,7 +267,7 @@ public class ServiceController {
 
 			String responseData=httpPost.postRequest();
 			if(responseData!=null){
-				Log.i("response defer service",responseData);
+				//Log.i("response defer service",responseData);
 				try {
 					JSONObject jsonObject=new JSONObject(responseData);
 					String responseCode=jsonObject.getString(RESPONSE_TAG);
@@ -260,6 +289,13 @@ public class ServiceController {
 		return success;
 	}
 
+    /**
+     * Sends a rating of a user on a specific service through REST API.
+     * @param serviceId
+     * @param rating
+     * @param comment
+     * @return true if the request was successful, otherwise false.
+     */
 	public boolean ratingService(String serviceId,String rating ,String comment){
 
 		boolean success=false;
@@ -284,7 +320,7 @@ public class ServiceController {
 
 			String responseData=httpPost.postRequest();
 			if(responseData!=null){
-				Log.i(this.toString()+"response ratig service",responseData);
+				//Log.i(this.toString()+"response ratig service",responseData);
 				try {
 					JSONObject jsonObject=new JSONObject(responseData);
 					String responseCode=jsonObject.getString(RESPONSE_TAG);

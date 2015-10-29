@@ -36,6 +36,12 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.location.LocationRequest;
 
+
+/**
+ * Sub class of Fragment that shows a map of google maps,
+ * recognize the best available user location and query the approximate address of this point,
+ * through google play services.
+ */
 public class MapServiceFragment extends Fragment
 implements
 ConnectionCallbacks,
@@ -124,8 +130,10 @@ OnCameraChangeListener {
 		markMyLocation();
 	}
 
+	/**
+	 * Moves the map camera to the user last know location.
+	 */
 	public void markMyLocation(){
-
 
 		if (mLocationClient != null && mLocationClient.isConnected()) {
 
@@ -142,6 +150,9 @@ OnCameraChangeListener {
 		}
 	}
 
+    /**
+     * Moves the camera to a default location if it class has not found any earlier.
+     */
 	private void markDefaultLocation(){
 
 		String coordinateString=getString(R.string.loc_bogota_default);
@@ -192,7 +203,7 @@ OnCameraChangeListener {
 
 	@Override
 	public void onConnectionFailed(ConnectionResult connectionResult) {
-		Log.e("conection failed",""+connectionResult.getErrorCode());
+		Log.e("connection failed",""+connectionResult.getErrorCode());
 	}
 
 	@Override
@@ -205,7 +216,7 @@ OnCameraChangeListener {
 		if (activity instanceof OnChangeAddressListener) {
 			listener = (OnChangeAddressListener) activity;
 		} else {
-			throw new ClassCastException(activity.toString()+ " must implemenet MyListFragment.OnItemSelectedListener");
+			throw new ClassCastException(activity.toString()+ " must implement MyListFragment.OnItemSelectedListener");
 		}
 	}
 
@@ -213,6 +224,10 @@ OnCameraChangeListener {
 		listener.OnChangeAddress(address);
 	}
 
+
+    /**
+     * Queries asynchronously the address of a given coordinates.
+     */
 	private class GetAddressTask extends AsyncTask<LatLng,Void,String>{
 
 		private Context context;

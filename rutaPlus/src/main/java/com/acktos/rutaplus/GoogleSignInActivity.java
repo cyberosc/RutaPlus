@@ -35,7 +35,9 @@ import com.acktos.rutaplus.controllers.UserController;
 import com.acktos.rutaplus.entities.User;
 import com.acktos.rutaplus.netcom.Payment;
 
-
+/**
+ * Activity to show "login", "register" or "forgot password" options.
+ */
 public class GoogleSignInActivity extends Activity implements ConnectionCallbacks,OnConnectionFailedListener, OnClickListener{
 
 
@@ -251,7 +253,7 @@ public class GoogleSignInActivity extends Activity implements ConnectionCallback
 
 				return user;
 			} else {
-				//Toast.makeText(getApplicationContext(),"La información de tu perfil de google no esta disponible", Toast.LENGTH_LONG).show();
+				//Toast.makeText(getApplicationContext(),"La informaciÃ³n de tu perfil de google no esta disponible", Toast.LENGTH_LONG).show();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -29,6 +29,7 @@ import android.widget.Toast;
 import com.acktos.rutaplus.controllers.CarController;
 import com.acktos.rutaplus.entities.Car;
 
+@Deprecated
 public class NewCarDialogFragment extends DialogFragment{
 
 	private View rootView;
@@ -214,7 +215,7 @@ public class NewCarDialogFragment extends DialogFragment{
 	}
 
 	/**
-	 *Debería ser una clase abstracta para spinner y list view
+	 *DeberÃ­a ser una clase abstracta para spinner y list view
 	 */
 	private class UpdateCarListTask extends AsyncTask<Void,Void,ArrayList<Car>>{
 

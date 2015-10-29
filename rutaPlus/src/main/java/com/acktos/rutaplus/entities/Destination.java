@@ -4,6 +4,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * @deprecated deprecated DAO class for destination place
+ */
 public class Destination {
 	
 	public String id;

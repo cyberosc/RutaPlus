@@ -4,6 +4,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
+/**
+ * @deprecated deprecated DAO class for favorite places
+ */
 public class Place {
 
 	public String id=null;

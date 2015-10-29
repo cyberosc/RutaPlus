@@ -14,6 +14,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * A simple BaseAdapter subclass to handle {@link CreditCard} items into {@link android.widget.ListView}
+ */
 public class CreditCardsAdapter extends BaseAdapter {
 	
 	

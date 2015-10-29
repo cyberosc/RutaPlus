@@ -16,6 +16,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+/**
+ * @deprecated  simple BaseAdapter subclass to handle {@link Place} items into {@link android.widget.ListView}
+ */
 public class PlaceAdapter extends BaseAdapter {
 	
 	

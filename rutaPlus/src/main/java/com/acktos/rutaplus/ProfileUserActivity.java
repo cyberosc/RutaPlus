@@ -22,26 +22,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * Activity which displays a login screen to the user, offering registration as
- * well.
+ * Activity which displays the profile user form and send it to REST API.
  */
 public class ProfileUserActivity extends Activity {
 	private UserController userController;
-	/**
-	 * The default email to populate the email field with.
-	 */
+
 	public static final String EXTRA_EMAIL = "com.example.android.authenticatordemo.extra.EMAIL";
 
-	/**
-	 * Keep track of the login task to ensure we can cancel it if requested.
-	 */
+
 	private CompleteUserProfileTask completeProfileTask = null;
 
-	
-	
 	private String ccValue;
 	private String phoneValue;
-	
 
 	// UI references.
 	private EditText txtCC;
@@ -90,11 +82,7 @@ public class ProfileUserActivity extends Activity {
 		return false;
 	}
 
-	/**
-	 * Attempts to sign in or register the account specified by the login form.
-	 * If there are form errors (invalid email, missing fields, etc.), the
-	 * errors are presented and no actual login attempt is made.
-	 */
+
 	public void attemptLogin() {
 		if (completeProfileTask != null) {
 			return;
@@ -139,9 +127,7 @@ public class ProfileUserActivity extends Activity {
 		}
 	}
 
-	/**
-	 * Shows the progress UI and hides the login form.
-	 */
+
 	private void showProgress(final boolean show) {
 
 
@@ -172,8 +158,7 @@ public class ProfileUserActivity extends Activity {
 	}
 
 	/**
-	 * Asyn task to complete the user profile
-	 * the user.
+	 * Async task to send the user profile to REST API.
 	 */
 	public class CompleteUserProfileTask extends AsyncTask<String, Void, Boolean> {
 		@Override
@@ -181,7 +166,7 @@ public class ProfileUserActivity extends Activity {
 			
 			InternalStorage storage=new InternalStorage(ProfileUserActivity.this);
 			String jsonString=storage.readFile(UserController.FILE_NAME_PROFILE);
-			Log.i("debug file before save",jsonString);
+			//Log.i("debug file before save",jsonString);
 			JSONObject jsonObject;
 			try {
 				jsonObject = new JSONObject(jsonString);

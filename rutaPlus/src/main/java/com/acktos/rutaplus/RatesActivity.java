@@ -18,6 +18,9 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
+/**
+ * Show a list of all rates for only informational purposes.
+ */
 public class RatesActivity extends Activity {
 
 	private ProgressDialog progress;
@@ -185,6 +188,9 @@ public class RatesActivity extends Activity {
 
 	}
 
+    /**
+     * Async task to get all rates.
+     */
  	private class GetAllRatesTask extends AsyncTask<Integer,Void,ArrayList<Rate>>{
 
 		private Context context;

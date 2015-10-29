@@ -11,6 +11,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+/**
+ * @deprecated  A simple BaseAdapter subclass to handle Car items into ListView
+ */
+
 public class CarAdapter extends BaseAdapter {
 	
 	

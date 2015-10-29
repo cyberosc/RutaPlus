@@ -8,7 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
 
-
+/**
+ * Activity which shows the "terms and conditions" from URL in a {@link WebView}
+ */
 public class TermsActivity extends Activity {
 	
 	private ActionBar actionBar; 

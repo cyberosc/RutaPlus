@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ListView;
 
+@Deprecated
 public class PlaceListActivity extends Activity {
 	
 	ActionBar actionBar;

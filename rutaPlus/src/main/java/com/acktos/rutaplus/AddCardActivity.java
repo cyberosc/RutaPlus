@@ -12,6 +12,11 @@ import android.view.MenuItem;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+
+/**
+ * Activity to show the form that allows entry credit cards.
+ * This form is loaded into a {@link WebView}  it is downloaded from a URI for security reasons.
+ */
 public class AddCardActivity extends Activity {
 	
 	//UI references

@@ -54,6 +54,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+@Deprecated
 public class AddServiceElectedActivity extends Activity  implements OnClickListener,MyDestinationListener {
 
 

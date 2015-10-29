@@ -14,6 +14,10 @@ import com.acktos.rutaplus.entities.Car;
 import android.content.Context;
 import android.util.Log;
 
+
+/**
+ * @deprecated deprecated controller class for elected Driver
+ */
 public class CarController {
 	
 	private Context context;
